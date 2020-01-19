@@ -1,4 +1,4 @@
-module github.com/obitech/yaml_test
+module github.com/obitech/k8s-yaml-test
 
 go 1.13
 
