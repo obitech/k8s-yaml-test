@@ -1,4 +1,4 @@
-# Evaluation Multi-Doc Parsing in Kubernetes
+# Evaluating Multi-Doc Parsing in Kubernetes
 
 Evaluating options to perform multi doc parsing in Kubernetes.
 
