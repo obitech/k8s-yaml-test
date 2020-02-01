@@ -31,6 +31,25 @@ kind: aha
 			&schema.GroupVersionKind{Group: "", Version: "yup", Kind: "aha"},
 		},
 	},
+	{
+		name: "delimiter in string",
+		data: `apiVersion: foo
+kind: bar
+---
+apiVersion: test
+kind: test
+string: "foo
+---
+bar"
+---
+apiVersion: yup
+kind: aha`,
+		expected: []*schema.GroupVersionKind{
+			&schema.GroupVersionKind{Group: "", Version: "foo", Kind: "bar"},
+			&schema.GroupVersionKind{Group: "", Version: "test", Kind: "test"},
+			&schema.GroupVersionKind{Group: "", Version: "yup", Kind: "aha"},
+		},
+	},
 }
 
 func TestReaders(t *testing.T) {
